@@ -5,7 +5,7 @@ const createDOM = () => {
     const div = document.createElement("div"),
         img = document.createElement("img")
 
-    const chaki = "/img/chaki.jpg",
+    const chaki = "/img/chaki.png",
         whiteFace = "/img/whiteFace.png"
 
     document.body.append(div)
@@ -31,38 +31,33 @@ const createDOM = () => {
 
     let flash = 0
     const flashing = (count) => {
+        debugger
         if (flash === count) {
-            clearInterval(interval)
+            clearInterval(interval);
+            debugger
             flash = 0
             if (img.src.indexOf(whiteFace) > -1) {
-                debugger
                 setChaki()
             } else {
-                debugger
                 setWhiteFace()
             }
         }
         toogle()
-
         ++flash
     }
 
-    let interval = (count) => setInterval(() => flashing(count), 100)
+    let interval;
 
     const setWhiteFace = () => {
         debugger
         img.src = whiteFace
-        interval(4)
-        // img.style.visibility = "visible"
-
+        interval = setInterval(() => flashing(16), 90)
     }
 
     const setChaki = () => {
         debugger
         img.src = chaki
-        interval(2)
-        // img.style.visibility = "visible"
-
+        interval = setInterval(() => flashing(4), 90)
     }
 
     setWhiteFace()
