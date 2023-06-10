@@ -13,13 +13,10 @@ const createDOM = () => {
         padding: 0;
         margin: 0;
     `
-    div.childNodes[0].style.cssText = `
-        position: relative;
-        width: 100%;
-        visibility: visible;
-    `
+    div.childNodes[0].style.width = "100%"
 
-    const toogle = () => {
+
+    const toggle = () => {
         if (img.style.visibility === "hidden") {
             img.style.visibility = "visible"
         } else {
@@ -38,7 +35,7 @@ const createDOM = () => {
                 setWhiteFace()
             }
         }
-        toogle()
+        toggle()
         ++flash
     }
 
@@ -56,7 +53,5 @@ const createDOM = () => {
 
     setWhiteFace()
 }
-
-
 
 document.addEventListener("DOMContentLoaded", createDOM);
