@@ -1,5 +1,3 @@
-
-
 const createDOM = () => {
 
     const div = document.createElement("div"),
@@ -31,10 +29,8 @@ const createDOM = () => {
 
     let flash = 0
     const flashing = (count) => {
-        debugger
         if (flash === count) {
             clearInterval(interval);
-            debugger
             flash = 0
             if (img.src.indexOf(whiteFace) > -1) {
                 setChaki()
@@ -49,13 +45,11 @@ const createDOM = () => {
     let interval;
 
     const setWhiteFace = () => {
-        debugger
         img.src = whiteFace
         interval = setInterval(() => flashing(16), 90)
     }
 
     const setChaki = () => {
-        debugger
         img.src = chaki
         interval = setInterval(() => flashing(4), 90)
     }
