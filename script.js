@@ -3,7 +3,7 @@ const createDOM = () => {
     document.querySelector(".startDiv").remove()
 
 
-    const div = document.createElement("div"),                  // блок, в котором будет хранится изображение
+    const div = document.createElement("div"),                  // блок, в котором будет храниться изображение
         img = document.createElement("img")
 
     let chaki, whiteFace;                                       // переменные, хранящие путь к картинкам
@@ -35,7 +35,7 @@ const createDOM = () => {
     `
     div.childNodes[0].style.width = "100%"
 
-    const toggle = () => {                                          // функция при вызове скрывает или открывает изображение
+    const toggle = () => {                                          // функция при вызове скрывает либо открывает изображение
         if (img.style.visibility === "hidden") {
             img.style.visibility = "visible"
         } else {
@@ -76,7 +76,7 @@ const createDOM = () => {
     setTimeout(setWhiteFace, 90)                                    // в звуке есть задержка, поэтому первую картинку я вызываю с аналогичной задержкой 
 }
 
-const start = () => {                                               // блок необходим, чтобы пользователь кликнул на экран, инче js не будет запускать звук
+const start = () => {                                               // блок необходим, чтобы пользователь кликнул на экран, иначе js не будет запускать звук
     const startDiv = document.createElement("div")
     startDiv.setAttribute("class", "startDiv")
     startDiv.textContent = "Нажмите на страницу, чтобы продолжить"
